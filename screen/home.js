@@ -75,13 +75,13 @@ export class home extends Component {
                 <TouchableWithoutFeedback
                     onPress={() => {navigate('Profile')}}>
                     <View style={styles.button}>
-                        <Text style={styles.text}>SHOW PROFILE</Text>
+                        <Text style={styles.buttonText}>SHOW PROFILE</Text>
                     </View>
                 </TouchableWithoutFeedback>
                 <TouchableWithoutFeedback
                     onPress={this.logout.bind(this)}>
                     <View style={styles.button}>
-                        <Text style={styles.text}>SIGN OUT</Text>
+                        <Text style={styles.buttonText}>SIGN OUT</Text>
                     </View>
                 </TouchableWithoutFeedback>
             </View>

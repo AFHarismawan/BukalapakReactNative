@@ -91,7 +91,7 @@ export class login extends Component {
                 <TouchableWithoutFeedback
                     onPress={this.login.bind(this)}>
                     <View style={styles.button}>
-                        <Text style={styles.text}>SIGN IN</Text>
+                        <Text style={styles.buttonText}>SIGN IN</Text>
                     </View>
                 </TouchableWithoutFeedback>
             </View>

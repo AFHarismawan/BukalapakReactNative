@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {
-    Text, View, AsyncStorage, ActivityIndicator,
+    Text, View, AsyncStorage, ActivityIndicator, Image,
 } from 'react-native';
 import {Buffer} from 'buffer';
 import {user_id_key, token_key} from '../utils/constants'
@@ -21,7 +21,7 @@ export class profile extends Component {
     }
 
     async getCache() {
-        try{
+        try {
             await AsyncStorage.multiGet([user_id_key, token_key], (err, stores) => {
                 this.setState({
                     user_id: stores[0][1],
@@ -29,7 +29,7 @@ export class profile extends Component {
                 });
             });
         }
-        catch(error){
+        catch (error) {
             console.error(error);
         }
         this.getData();
@@ -75,9 +75,14 @@ export class profile extends Component {
             );
         }
         return (
-            <View style={styles.container}>
-                <Text style={styles.title}>
-                    Bukalapak
+            <View style={styles.container1}>
+                <View style={styles.centerObject}>
+                    <Image
+                        source={{uri: this.state.avatar}}
+                        style={styles.profileImage}/>
+                </View>
+                <Text style={styles.text}>
+                    {this.state.name + '\n' + this.state.email}
                 </Text>
             </View>
         );
